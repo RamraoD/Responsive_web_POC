@@ -1,0 +1,40 @@
+.header {
+	 background-color: #d5eb34;
+}
+.img {
+	width:50px;
+}
+.btn {
+	padding:10px;
+}
+.image {
+	width:500px;
+}
+.center {
+	text-align: center;
+    	padding-bottom: 10px;
+	width: 100%;
+    	background-color: antiquewhite;
+}
+.gallery1 {
+	width: 400px;
+	padding-left: 15px;
+}
+.gallery2 {
+	width:400px;
+	padding-left: 25px;
+}
+.gallery3 {
+	width:410px;
+	padding-left: 30px;
+}
+.foo {
+	cursor: pointer;
+	background-color: powderblue;
+}
+.footer {
+	text-align: center;
+    	background-color: palegreen;
+
+}
+
