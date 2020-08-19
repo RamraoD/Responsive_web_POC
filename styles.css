@@ -1,40 +1,30 @@
 .header {
-	 background-color: #d5eb34;
+  background-color: #d5eb34;
 }
 .img {
-	width:50px;
+  width: 50px;
 }
 .btn {
-	padding:10px;
+  padding: 10px;
 }
-.image {
-	width:500px;
+.intro-image {
+  width: 350px;
 }
 .center {
-	text-align: center;
-    	padding-bottom: 10px;
-	width: 100%;
-    	background-color: antiquewhite;
+  text-align: center;
 }
-.gallery1 {
-	width: 400px;
-	padding-left: 15px;
+.hd-section {
+  background-color: antiquewhite;
+  padding-bottom: 10px;
 }
-.gallery2 {
-	width:400px;
-	padding-left: 25px;
-}
-.gallery3 {
-	width:410px;
-	padding-left: 30px;
+.gallery-img {
+  width: 100%;
 }
 .foo {
-	cursor: pointer;
-	background-color: powderblue;
+  cursor: pointer;
+  background-color: powderblue;
 }
 .footer {
-	text-align: center;
-    	background-color: palegreen;
-
+  text-align: center;
+  background-color: palegreen;
 }
-
