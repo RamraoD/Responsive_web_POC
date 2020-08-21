@@ -26,25 +26,56 @@ function initGallery() {
   slides[slideIndex].style.opacity = 1;
   console.log(slideIndex);
 
-  captionText = document.querySelector(".captiontHolder.captionText");
-  captionText.innerHTML = slides(slideIndex).querySelector(
+  captionText = document.querySelector(".captionHolder .captionText");
+  captionText.innerText = slides[slideIndex].querySelector(
     ".captionText"
-  ).innerHTML;
+  ).innerText;
 
   dots = [];
   var dotsContainer = document.getElementById("dotsContainer");
 
-  for (var i = 0; i < slides.length; i++)
+  for (var i = 0; i < slides.length; i++) {
     var dot = document.createElement("span");
-  dot.classList.add("dots");
-  ditsContainer.append(dot);
-  dots.push(dot);
+    dot.classList.add("dots");
+    dotsContainer.append(dot);
+    dots.push(dot);
 }
-
+ dots[slideIndex].classList.add("active");
+}
+function plusSlides(n){
+  moveSlide(slideIndex+n);
+}
 function moveSlide(n) {
+  console.log(n)
   var i, current, next;
   var moveSlideAnimClass = {
     forCurrent: "",
-    forNext: "",
-  };
+    forNext: ""
+  }
+  if(n>slideIndex){
+    if(n>=slides.length){n=0}
+    moveSlideAnimClass.forCurrent="moveLeftCurrentSlide";
+    moveSlideAnimClass.forNext="moveLeftNextSlide";
+  }else if(n<slideIndex){
+    if(n<0){n=slides.length-1}
+    moveSlideAnimClass.forCurrent="moveRightCurrentSlide";
+    moveSlideAnimClass.forNext="moveRightNextSlide";
+  }
+  if(n!=slideIndex) {
+    next=slides[n];
+    current=slides[slideIndex];
+    console.log(next)
+    console.log(current)
+    for(i=0;i<slides.length;i++) {
+      console.log("dattttt")
+      slides[i].className="imageHolder";
+      slides[i].style.opacity = 0;
+      dots[i].classList.remove("active");
+    }
+    current.classList.add(moveSlideAnimClass.forCurrent);
+    console.log(current)
+    next.classList.add(moveSlideAnimClass.forNext);
+    dots[n].classList.add("active");
+    slideIndex=n;
+  }
 }

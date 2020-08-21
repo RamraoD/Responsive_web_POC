@@ -210,3 +210,64 @@
   animation-timing-function:  linear;
   animation-fill-mode: forwards;
 }
+
+.galleryContainer .moveLeftNextSlide {
+  animation-name: moveLeftNext;
+  animation-duration:  0.5s;
+  animation-timing-function:  linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes moveLeftCurrent {
+  from {
+    margin-left: 0;
+    opacity: 1;
+  }
+  to {
+    margin-left: -100%;
+    opacity: 1;
+  }
+}
+@keyframes moveLeftNext {
+  from {
+    margin-left: 100%;
+    opacity: 1;
+  }
+  to {
+    margin-left: 0;
+    opacity: 1;
+  }
+}
+
+.galleryContainer .moveRightCurrentSlide {
+  animation-name: moveLeftCurrent;
+  animation-duration:  0.5s;
+  animation-timing-function:  linear;
+  animation-fill-mode: forwards;
+}
+@keyframes moveLeftNext {
+  from {
+    margin-left: 0;
+    opacity: 1;
+  }
+  to {
+    margin-left: 100;
+    opacity: 1;
+  }
+}
+.galleryContainer .moveRightNextSlide {
+  animation-name: moveRightNext;
+  animation-duration:  0.5s;
+  animation-timing-function:  linear;
+  animation-fill-mode: forwards;
+}
+@keyframes moveRightNext {
+  from {
+    margin-left: -100;
+    opacity: 1;
+  }
+  to {
+    margin-left: 0;
+    opacity: 1;
+  }
+}
