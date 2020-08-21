@@ -1,43 +1,49 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Gallery</title>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" /> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="text/javascript" src="scripts.js"></script>
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> -->
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>Gallery</title>
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" /> -->
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <link rel="stylesheet" href="styles.css" />
-  <script type="text/javascript" src="scripts.js"></script>
-  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> -->
-</head>
-
-<body>
-  <div class="about-section">
-    <h1>Gallery Page</h1>
-    <button class="btn home"><i class="fa fa-home"></i><a href="index.html">Home</a></button>
-    <button class="btn home"><i class="fa fa-home"></i><a href="aboutus.html">About Us</a></button>
-  </div>
-
-  <div class="galleryContainer">
-    <div class="slideshowContainer">
-      <div class="leftArrow"><span class="arrow arrowLeft"></span></div>
-      <div class="rightArrow"><span class="arrow arrowRight"></span></div>
-      <div class="captionHolder"><p class="captionText"></p></div>
-      <div class="imageholder">
-        <img src="image/pexels-photo-267371.jpeg" alt="">
-        <p class="captionText">Caption Text-01</p>
-      </div>
-      <div class="imageholder">
-        <img src="image/pexels-photo-3823488.jpeg" alt="">
-        <p class="captionText">Caption Text-02</p>
-      </div>
-      <div class="imageholder">
-        <img src="image/pexels-photo-583846.jpeg" alt="">
-        <p class="captionText">Caption Text-03</p>
-      </div>
+  <body>
+    <div class="about-section">
+      <h1>Gallery Page</h1>
+      <button class="btn home">
+        <i class="fa fa-home"></i><a href="index.html">Home</a>
+      </button>
+      <button class="btn home">
+        <i class="fa fa-home"></i><a href="aboutus.html">About Us</a>
+      </button>
     </div>
-    <div id="dotsContainer"></div>
-  </div>
-</body>
+
+    <div class="galleryContainer">
+      <div class="slideshowContainer">
+        <div class="leftArrow"><span class="arrow arrowLeft"></span></div>
+        <div class="rightArrow"><span class="arrow arrowRight"></span></div>
+        <div class="captionHolder"><p class="captionText"></p></div>
+        <div class="imageholder">
+          <img src="image/pexels-photo-267371.jpeg" alt="" />
+          <p class="captionText">Caption Text-01</p>
+        </div>
+        <div class="imageholder">
+          <img src="image/pexels-photo-3823488.jpeg" alt="" />
+          <p class="captionText">Caption Text-02</p>
+        </div>
+        <div class="imageholder">
+          <img src="image/pexels-photo-583846.jpeg" alt="" />
+          <p class="captionText">Caption Text-03</p>
+        </div>
+      </div>
+      <div id="dotsContainer"></div>
+    </div>
+  </body>
 </html>
