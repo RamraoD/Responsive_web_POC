@@ -12,31 +12,33 @@ $(document).ready(function(){
   });
 });
 
-var slideIndex = 1;
-showSlides(slideIndex);
+var slideIndex,slides,dots,captionText;
+function initGallery() {
+  slideIndex=0;
+  slides=document.getElementsByClassName("imageholder");
+  console.log(slides)
+  slides[slideIndex].style.opacity=1;
+  console.log(slideIndex)
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+  captionText=document.querySelector(".captiontHolder.captionText");
+  captionText.innerHTML=slides(slideIndex).querySelector(".captionText").innerHTML;
+
+  dots=[];
+  var dotsContainer=document.getElementById("dotsContainer");
+
+  for(var i=0;i<slides.length;i++)
+  var dot=document.createElement("span");
+  dot.classList.add("dots");
+  ditsContainer.append(dot);
+  dots.push(dot);
 }
+initGallery();
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+function  moveSlide(n) {
+  var i,current,next;
+  var moveSlideAnimClass= {
+    forCurrent:"",
+    forNext:""
   }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
 }
+
