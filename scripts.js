@@ -79,3 +79,4 @@ function moveSlide(n) {
     slideIndex=n;
   }
 }
+
