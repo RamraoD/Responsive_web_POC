@@ -1,7 +1,8 @@
 var slideIndex, slides, dots, captionText;
 
 $(document).ready(function () {
-  $.getJSON('http://jsonplaceholder.typicode.com/photos', function(data) {
+
+  $.getJSON('gallery.json', function(data) {
     for (const [key, value] of data.entries()) {
       console.log("vadvaafadf"+value.url);
       var gallery='<img src="'+value.url+'">';
@@ -10,7 +11,7 @@ $(document).ready(function () {
     }
   });
   initGallery();
-  
+
   $("#navbarCollapse a").on("click", function (event) {
     if (this.hash !== "") {
       event.preventDefault();
