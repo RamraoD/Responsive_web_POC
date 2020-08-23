@@ -13,11 +13,18 @@
     <script type="text/javascript" src="scripts.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   </head>
-
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
       <img class="img" src="image/slamigo.jpeg" />
       <a href="#" class="navbar-brand mr-3">Gallery</a>
+      <button
+      type="button"
+      class="navbar-toggler"
+      data-toggle="collapse"
+      data-target="#navbarCollapse"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ml-auto">
 	        <a href="index.html" class="nav-item nav-link">Home</a>
@@ -31,8 +38,11 @@
         <div class="leftArrow" onclick="plusSlides(-1)"><span class="arrow arrowLeft"></span></div>
         <div class="rightArrow" onclick="plusSlides(1)"><span class="arrow arrowRight"></span></div>
         <div class="captionHolder" ><p class="captionText"></p></div>
+        
         <div class="imageholder">
-          <img src="image/pexels-photo-267371.jpeg" alt="" />
+        </div>
+        <!-- <div class="imageholder">
+          <img src="image/pexels-photo-845451.jpeg" alt="" />
           <p class="captionText">Caption Text-01</p>
         </div>
         <div class="imageholder">
@@ -42,10 +52,9 @@
         <div class="imageholder">
           <img src="image/pexels-photo-583846.jpeg" alt="" />
           <p class="captionText">Caption Text-03</p>
-        </div>
+        </div> -->
       </div>
       <div id="dotsContainer"></div>
     </div>
-    <p><input type="button" value="Show Images" /></p>
   </body>
 </html>

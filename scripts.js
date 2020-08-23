@@ -1,6 +1,16 @@
-$(document).ready(function () {
-  initGallery();
+var slideIndex, slides, dots, captionText;
 
+$(document).ready(function () {
+  $.getJSON('http://jsonplaceholder.typicode.com/photos', function(data) {
+    for (const [key, value] of data.entries()) {
+      console.log("vadvaafadf"+value.url);
+      var gallery='<img src="'+value.url+'">';
+      console.log(gallery)
+      $(".imageholder").append(gallery);
+    }
+  });
+  initGallery();
+  
   $("#navbarCollapse a").on("click", function (event) {
     if (this.hash !== "") {
       event.preventDefault();
@@ -18,7 +28,7 @@ $(document).ready(function () {
   });
 });
 
-var slideIndex, slides, dots, captionText;
+
 function initGallery() {
   slideIndex = 0;
   slides = document.getElementsByClassName("imageholder");
