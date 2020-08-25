@@ -2,13 +2,17 @@ var slideIndex, slides, dots, captionText;
 
 $(document).ready(function () {
 
-  $.getJSON('gallery.json', function(data) {
+  $.getJSON('https://jsonplaceholder.typicode.com/photos?_start=1&_end=8', function(data) {
+    for(var i=0;i<data.length;i++) {
+      console.log(data.length)
     for (const [key, value] of data.entries()) {
       console.log("vadvaafadf"+value.url);
-      var gallery='<img src="'+value.url+'">';
+      var gallery='<div class="imageholder"><img src="'+value.url+'"></div>';
       console.log(gallery)
-      $(".imageholder").append(gallery);
+      $(".imageContainer").append(gallery);
     }
+    console.log(i)
+  }
   });
   initGallery();
 
@@ -64,23 +68,23 @@ function moveSlide(n) {
     forCurrent: "",
     forNext: ""
   }
-  var slideTextAnimClass;
+  // var slideTextAnimClass;
   if(n>slideIndex){
     if(n>=slides.length){n=0}
     moveSlideAnimClass.forCurrent="moveLeftCurrentSlide";
     moveSlideAnimClass.forNext="moveLeftNextSlide";
-    slideTextAnimClass="slideTextFromTop";
+    // slideTextAnimClass="slideTextFromTop";
   }else if(n<slideIndex){
     if(n<0){n=slides.length-1}
     moveSlideAnimClass.forCurrent="moveRightCurrentSlide";
     moveSlideAnimClass.forNext="moveRightNextSlide";
-    slideTextAnimClass="slideTextFromBottom";
+    // slideTextAnimClass="slideTextFromBottom";
   }
   if(n!=slideIndex) {
     next=slides[n];
     current=slides[slideIndex];
     console.log(next)
-    console.log(current)
+    console.log("data"+current)
     for(i=0;i<slides.length;i++) {
       console.log("dattttt")
       slides[i].className="imageholder";
@@ -93,9 +97,8 @@ function moveSlide(n) {
     dots[n].classList.add("active");
     slideIndex=n;
   }
-  captionText.style.display-"none";
-  captionText.className="captionText "+slideTextAnimClass;
-  captionText.innerText=slides[n].querySelector(".captionText").innerText;
-  captionText.style.display="block";
+  // captionText.style.display-"none";
+  // captionText.className="captionText "+slideTextAnimClass;
+  // captionText.innerText=slides[n].querySelector(".captionText").innerText;
+  // captionText.style.display="block";
 }
-
