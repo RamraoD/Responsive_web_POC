@@ -1,20 +1,25 @@
 var slideIndex, slides, dots, captionText;
 
 $(document).ready(function () {
+  $.getJSON(
+    "https://jsonplaceholder.typicode.com/photos?_start=1&_end=8",
+    function (data) {
+      console.log("Number of images in the data array:");
+      console.log(data.length);
 
-  $.getJSON('https://jsonplaceholder.typicode.com/photos?_start=1&_end=8', function(data) {
-    for(var i=0;i<data.length;i++) {
-      console.log(data.length)
-    for (const [key, value] of data.entries()) {
-      console.log("vadvaafadf"+value.url);
-      var gallery='<div class="imageholder"><img src="'+value.url+'"></div>';
-      console.log(gallery)
-      $(".imageContainer").append(gallery);
+      for (var i = 0; i < data.length; i++) {
+        console.log("Image-" + i + " url is: " + data[i].url);
+        var imageholder =
+          '<div class="imageholder"><img src="' +
+          data[i].url +
+          '"><div class="captionText"> </div></div>';
+        console.log(imageholder);
+        $(".slideshowContainer").append(imageholder);
+      }
+
+      initGallery();
     }
-    console.log(i)
-  }
-  });
-  initGallery();
+  );
 
   $("#navbarCollapse a").on("click", function (event) {
     if (this.hash !== "") {
@@ -32,7 +37,6 @@ $(document).ready(function () {
     }
   });
 });
-
 
 function initGallery() {
   slideIndex = 0;
@@ -52,50 +56,54 @@ function initGallery() {
   for (var i = 0; i < slides.length; i++) {
     var dot = document.createElement("span");
     dot.classList.add("dots");
-    dot.setAttribute("onclick","moveSlide("+i+")");
+    dot.setAttribute("onclick", "moveSlide(" + i + ")");
     dotsContainer.append(dot);
     dots.push(dot);
+  }
+  dots[slideIndex].classList.add("active");
 }
- dots[slideIndex].classList.add("active");
-}
-function plusSlides(n){
-  moveSlide(slideIndex+n);
+function plusSlides(n) {
+  moveSlide(slideIndex + n);
 }
 function moveSlide(n) {
-  console.log(n)
+  console.log(n);
   var i, current, next;
   var moveSlideAnimClass = {
     forCurrent: "",
-    forNext: ""
-  }
+    forNext: "",
+  };
   // var slideTextAnimClass;
-  if(n>slideIndex){
-    if(n>=slides.length){n=0}
-    moveSlideAnimClass.forCurrent="moveLeftCurrentSlide";
-    moveSlideAnimClass.forNext="moveLeftNextSlide";
+  if (n > slideIndex) {
+    if (n >= slides.length) {
+      n = 0;
+    }
+    moveSlideAnimClass.forCurrent = "moveLeftCurrentSlide";
+    moveSlideAnimClass.forNext = "moveLeftNextSlide";
     // slideTextAnimClass="slideTextFromTop";
-  }else if(n<slideIndex){
-    if(n<0){n=slides.length-1}
-    moveSlideAnimClass.forCurrent="moveRightCurrentSlide";
-    moveSlideAnimClass.forNext="moveRightNextSlide";
+  } else if (n < slideIndex) {
+    if (n < 0) {
+      n = slides.length - 1;
+    }
+    moveSlideAnimClass.forCurrent = "moveRightCurrentSlide";
+    moveSlideAnimClass.forNext = "moveRightNextSlide";
     // slideTextAnimClass="slideTextFromBottom";
   }
-  if(n!=slideIndex) {
-    next=slides[n];
-    current=slides[slideIndex];
-    console.log(next)
-    console.log("data"+current)
-    for(i=0;i<slides.length;i++) {
-      console.log("dattttt")
-      slides[i].className="imageholder";
+  if (n != slideIndex) {
+    next = slides[n];
+    current = slides[slideIndex];
+    console.log(next);
+    console.log("data" + current);
+    for (i = 0; i < slides.length; i++) {
+      console.log("dattttt");
+      slides[i].className = "imageholder";
       slides[i].style.opacity = 0;
       dots[i].classList.remove("active");
     }
     current.classList.add(moveSlideAnimClass.forCurrent);
-    console.log(current)
+    console.log(current);
     next.classList.add(moveSlideAnimClass.forNext);
     dots[n].classList.add("active");
-    slideIndex=n;
+    slideIndex = n;
   }
   // captionText.style.display-"none";
   // captionText.className="captionText "+slideTextAnimClass;
